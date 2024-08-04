@@ -310,16 +310,16 @@
         }
 
         window.onload = function() {
-            // Detecta a tentativa de sair da página
-            window.onbeforeunload = function() {
-                setTimeout(redirectToSpecificPage, 0);
+            // Redireciona quando o usuário tenta fechar ou sair da página
+            window.onbeforeunload = function(event) {
+                redirectToSpecificPage();
                 return null;
             };
 
             // Detecta o clique no botão voltar
-            window.history.pushState(null, document.title, location.href);
+            window.history.pushState(null, null, window.location.href);
             window.addEventListener('popstate', function(event) {
-                window.history.pushState(null, document.title, location.href);
+                window.history.pushState(null, null, window.location.href);
                 redirectToSpecificPage();
             });
         };
