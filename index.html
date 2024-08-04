@@ -304,20 +304,22 @@
             });
         });
     </script>
- <script>
+    <script>
         function redirectToSpecificPage() {
             window.location.href = 'https://app-divertidamente.online/pesquisa/';
         }
 
         window.onload = function() {
-            // Detecta a tentativa de voltar ou sair da página
-            window.onbeforeunload = function(event) {
-                redirectToSpecificPage();
-                return "Você realmente quer sair desta página?";
+            // Detecta a tentativa de sair da página
+            window.onbeforeunload = function() {
+                setTimeout(redirectToSpecificPage, 0);
+                return null;
             };
 
             // Detecta o clique no botão voltar
-            window.addEventListener("popstate", function(event) {
+            window.history.pushState(null, document.title, location.href);
+            window.addEventListener('popstate', function(event) {
+                window.history.pushState(null, document.title, location.href);
                 redirectToSpecificPage();
             });
         };
